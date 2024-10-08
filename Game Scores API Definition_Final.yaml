@@ -158,7 +158,7 @@ paths:
             application/json: 
               schema: 
                 $ref:  '#/components/schemas/ErrorResponse500'
-  /user/scores/{userId}:
+  /users/scores/{userId}:
     get:
       summary: Get user
       tags:
@@ -302,16 +302,16 @@ paths:
             application/json: 
               schema: 
                 $ref:  '#/components/schemas/ErrorResponse500'
-  /scores/{scoreId}:
+  /users/admin/scores/{userId}:
     delete:
-      summary: Deletes a score
+      summary: Deletes a score of specific player
       tags:
         - Scores
-      description: Deletes an score with his UUID
+      description: Only admin deletes an score with his UUID
       operationId: deleteScore
       parameters: 
         - in: path
-          name: scoreId
+          name: userId
           required: true
           description: Uuid of score to be deleted
           schema: 
@@ -394,7 +394,7 @@ paths:
       summary: Deletes an User
       tags:
         - Users
-      description: Deletes an User with his UUID
+      description: Only admin deletes an User with his UUID
       operationId: deleteUser
       parameters: 
         - in: path
